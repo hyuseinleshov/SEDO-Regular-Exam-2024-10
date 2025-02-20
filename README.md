@@ -1,2 +1,2 @@
 # SEDO-Regular-Exam-2024-10
-- test 5
+- test 6
