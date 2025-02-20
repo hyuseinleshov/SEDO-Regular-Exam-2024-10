@@ -14,35 +14,35 @@ pipeline {
 
         stage('Setup .NET') {
             steps {
-                sh 'dotnet --version'
+                bat 'dotnet --version'
             }
         }
 
         stage('Restore Dependencies') {
             steps {
-                sh 'dotnet restore'
+                bat 'dotnet restore'
             }
         }
 
         stage('Build Application') {
             steps {
-                sh 'dotnet build --no-restore --configuration Release'
+                bat 'dotnet build --no-restore --configuration Release'
             }
         }
 
         stage('Run Unit Tests') {
             steps {
-                sh 'dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --configuration Release --verbosity normal'
+                bat 'dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --configuration Release --verbosity normal'
             }
         }
     }
 
     post {
         success {
-            echo 'Build and Tests completed successfully!'
+            echo '✅ Build and Tests completed successfully!'
         }
         failure {
-            echo 'Build or Tests failed!'
+            echo '❌ Build or Tests failed!'
         }
     }
 }
