@@ -14,7 +14,7 @@ namespace HouseRentingSystem.Services.Agents
           //  => this.data.Houses.Any(h => h.RenterId == userId);
 
         public bool AgentWithPhoneNumberExists(string phoneNumber)
-           => this.data.Agents.Any(a => a.PhoneNumber == phoneNumber);
+           => this.data.Agents.Any(a => a == phoneNumber);
         
         
         public int GetAgentId(string userId)
