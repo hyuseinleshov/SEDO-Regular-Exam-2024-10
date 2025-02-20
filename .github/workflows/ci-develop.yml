@@ -16,7 +16,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: 6.0.x # Match the project’s .NET version
 
       - name: Restore Dependencies
         run: dotnet restore
@@ -25,4 +25,4 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: Run Unit Tests
-        run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --verbosity normal
+        run: dotnet test HouseRentingSystem.UnitTests/HouseRentingSystem.UnitTests.csproj --no-build --configuration Release --verbosity normal
